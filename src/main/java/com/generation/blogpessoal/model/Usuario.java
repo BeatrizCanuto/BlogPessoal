@@ -18,41 +18,49 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Entity
 @Table(name = "tb_usuarios")
 public class Usuario {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private long id;
 	
-	@NotNull(message = "O atributo é obrigatório")
+	@NotNull(message = "O atributo nome é obrigatório")
 	private String nome;
 	
-	@NotNull(message = "O atributo é obrigatório")
+	@NotNull(message = "O atributo usuário é obrigatório")
 	@Email
 	private String usuario;
 	
-	@NotNull(message = "O atributo é obrigatório")
-	@Size(min = 8, message = "O atributo aceita no mínimo 8 caracteres")
+	@NotNull(message = "O atributo senha é obrigatório")
+	@Size(min = 8, message = "O atributo senha deve ter no mínimo 8 caracteres")
 	private String senha;
 	
-	@NotNull(message = "O atributo é obrigatório")
-	private String tipo;
-	
-	private String foto;
-	
-	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE)
+    private String foto;
+    
+	@OneToMany (mappedBy = "usuario", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("usuario")
-	private List<Postagem> postagem;
+	private List <Postagem> postagem;
 
-	public Long getId() {
-		return id;
+	public Usuario(Long id, String nome, String usuario, String senha, String foto) {
+		this.id = id;
+		this.nome = nome;
+		this.usuario = usuario;
+		this.senha = senha;
+		this.foto = foto;
 	}
 
-	public void setId(Long id) {
+	public Usuario() {	}
+
+
+	public long getId() {
+		return this.id;
+	}
+
+	public void setId(long id) {
 		this.id = id;
 	}
 
 	public String getNome() {
-		return nome;
+		return this.nome;
 	}
 
 	public void setNome(String nome) {
@@ -60,7 +68,7 @@ public class Usuario {
 	}
 
 	public String getUsuario() {
-		return usuario;
+		return this.usuario;
 	}
 
 	public void setUsuario(String usuario) {
@@ -68,35 +76,27 @@ public class Usuario {
 	}
 
 	public String getSenha() {
-		return senha;
+		return this.senha;
 	}
 
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
 
-	public String getTipo() {
-		return tipo;
-	}
-
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
-	}
-
-	public String getFoto() {
+    public String getFoto() {
 		return foto;
 	}
 
 	public void setFoto(String foto) {
 		this.foto = foto;
 	}
-
+    
 	public List<Postagem> getPostagem() {
-		return postagem;
+		return this.postagem;
 	}
 
 	public void setPostagem(List<Postagem> postagem) {
 		this.postagem = postagem;
 	}
-	
+
 }
