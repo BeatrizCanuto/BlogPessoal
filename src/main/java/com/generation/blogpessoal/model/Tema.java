@@ -24,11 +24,11 @@ public class Tema {
 	private Long id;
 
 	@NotNull(message = "O atributo Descricão é obrigatório e não pode conter espaços em brancos!")
-	@Size(min = 5, max = 100, message = "O atributo deve conter no minimo 5 e no máximo 100 caractéres")
+	@Size(min = 2, max = 100, message = "O atributo deve conter no minimo 5 e no máximo 100 caractéres")
 	private String titulo;
 
 	@NotBlank(message = "O atributo não pode conter espaços em brancos")
-	@Size(min = 10, max = 500, message = "O atributo deve conter no minimo 10 e no máximo 500 caractéres")
+	@Size(min = 2, max = 500, message = "O atributo deve conter no minimo 10 e no máximo 500 caractéres")
 	private String descricao;
 
 	@OneToMany(mappedBy = "tema", cascade = CascadeType.REMOVE)

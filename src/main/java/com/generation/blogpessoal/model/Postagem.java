@@ -26,12 +26,12 @@ public class Postagem {
 	private Long id;
 	
 	@NotNull( message =  "O Atributo é obrigatório")
-	@Size(min =10, max = 255 , message = "O atributo aceita minímo 10 e no máximo 255 caractéres")
+	@Size(min =2, max = 255 , message = "O atributo aceita minímo 10 e no máximo 255 caractéres")
 	private String titulo;
 	
 	
 	@NotNull( message =  "O Atributo é obrigatório")
-	@Size(min =10, max = 10000 , message = "O atributo aceita minímo 10 e no máximo 10000 caractéres")
+	@Size(min =2, max = 10000 , message = "O atributo aceita minímo 10 e no máximo 10000 caractéres")
 	private String texto;
 	
 	@UpdateTimestamp
