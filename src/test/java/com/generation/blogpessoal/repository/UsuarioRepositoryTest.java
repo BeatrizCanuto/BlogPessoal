@@ -29,16 +29,16 @@ public class UsuarioRepositoryTest {
         usuarioRepository.deleteAll();
 
 		usuarioRepository.save(new Usuario(0L, "João da Silva", "joao@email.com.br", "13465278",
-                                           "https://i.imgur.com/FETvs2O.jpg"));
+                                           "https://i.imgur.com/FETvs2O.jpg", null));
 		
 		usuarioRepository.save(new Usuario(0L, "Manuela da Silva", "manuela@email.com.br", "13465278", 
-                                           "https://i.imgur.com/NtyGneo.jpg"));
+                                           "https://i.imgur.com/NtyGneo.jpg", null));
 		
 		usuarioRepository.save(new Usuario(0L, "Adriana da Silva", "adriana@email.com.br", "13465278",
-                                           "https://i.imgur.com/mB3VM2N.jpg"));
+                                           "https://i.imgur.com/mB3VM2N.jpg", null));
 
         usuarioRepository.save(new Usuario(0L, "Paulo Antunes", "paulo@email.com.br", "13465278", 
-                                           "https://i.imgur.com/JR7kUFU.jpg"));
+                                           "https://i.imgur.com/JR7kUFU.jpg", null));
 
 	}
 
